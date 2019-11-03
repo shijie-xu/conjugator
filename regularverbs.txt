@@ -70,3 +70,7 @@ changer
 déranger
 engager
 voyager
+ennuyer
+essayer
+mener
+lever

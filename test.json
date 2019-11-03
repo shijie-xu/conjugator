@@ -1,0 +1,160 @@
+{
+    "value": {
+        "verb": {
+            "infinitive": "aimer",
+            "predicted": false,
+            "pred_score": 1.0,
+            "template": "aim:er",
+            "translation_en": "love",
+            "stem": "aim"
+        },
+        "moods": {
+            "infinitif": {
+                "infinitif-présent": [
+                    "aimer"
+                ]
+            },
+            "indicatif": {
+                "présent": [
+                    "j'aime",
+                    "tu aimes",
+                    "il aime",
+                    "nous aimons",
+                    "vous aimez",
+                    "ils aiment"
+                ],
+                "imparfait": [
+                    "j'aimais",
+                    "tu aimais",
+                    "il aimait",
+                    "nous aimions",
+                    "vous aimiez",
+                    "ils aimaient"
+                ],
+                "futur-simple": [
+                    "j'aimerai",
+                    "tu aimeras",
+                    "il aimera",
+                    "nous aimerons",
+                    "vous aimerez",
+                    "ils aimeront"
+                ],
+                "passé-simple": [
+                    "j'aimai",
+                    "tu aimas",
+                    "il aima",
+                    "nous aimâmes",
+                    "vous aimâtes",
+                    "ils aimèrent"
+                ],
+                "passé-composé": [
+                    "j'ai aimé",
+                    "tu as aimé",
+                    "il a aimé",
+                    "nous avons aimé",
+                    "vous avez aimé",
+                    "ils ont aimé"
+                ],
+                "plus-que-parfait": [
+                    "j'avais aimé",
+                    "tu avais aimé",
+                    "il avait aimé",
+                    "nous avions aimé",
+                    "vous aviez aimé",
+                    "ils avaient aimé"
+                ],
+                "futur-antérieur": [
+                    "j'aurai aimé",
+                    "tu auras aimé",
+                    "il aura aimé",
+                    "nous aurons aimé",
+                    "vous aurez aimé",
+                    "ils auront aimé"
+                ],
+                "passé-antérieur": [
+                    "j'eus aimé",
+                    "tu eus aimé",
+                    "il eut aimé",
+                    "nous eûmes aimé",
+                    "vous eûtes aimé",
+                    "ils eurent aimé"
+                ]
+            },
+            "conditionnel": {
+                "présent": [
+                    "j'aimerais",
+                    "tu aimerais",
+                    "il aimerait",
+                    "nous aimerions",
+                    "vous aimeriez",
+                    "ils aimeraient"
+                ],
+                "passé": [
+                    "j'aurais aimé",
+                    "tu aurais aimé",
+                    "il aurait aimé",
+                    "nous aurions aimé",
+                    "vous auriez aimé",
+                    "ils auraient aimé"
+                ]
+            },
+            "subjonctif": {
+                "présent": [
+                    "que j'aime",
+                    "que tu aimes",
+                    "qu'il aime",
+                    "que nous aimions",
+                    "que vous aimiez",
+                    "qu'ils aiment"
+                ],
+                "imparfait": [
+                    "que j'aimasse",
+                    "que tu aimasses",
+                    "qu'il aimât",
+                    "que nous aimassions",
+                    "que vous aimassiez",
+                    "qu'ils aimassent"
+                ],
+                "passé": [
+                    "que j'aie aimé",
+                    "que tu aies aimé",
+                    "qu'il ait aimé",
+                    "que nous ayons aimé",
+                    "que vous ayez aimé",
+                    "qu'ils aient aimé"
+                ],
+                "plus-que-parfait": [
+                    "que j'eusse aimé",
+                    "que tu eusses aimé",
+                    "qu'il eût aimé",
+                    "que nous eussions aimé",
+                    "que vous eussiez aimé",
+                    "qu'ils eussent aimé"
+                ]
+            },
+            "imperatif": {
+                "imperatif-présent": [
+                    "aime",
+                    "aimons",
+                    "aimez"
+                ],
+                "imperatif-passé": [
+                    "aie aimé",
+                    "ayons aimé",
+                    "ayez aimé"
+                ]
+            },
+            "participe": {
+                "participe-présent": [
+                    "aimant"
+                ],
+                "participe-passé": [
+                    "aimé",
+                    "aimés",
+                    "aimée",
+                    "aimées"
+                ]
+            }
+        }
+    }
+}

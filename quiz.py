@@ -44,6 +44,7 @@ def challenge(verb, pronoun, tense):
 	if response == 'q':
 		sys.exit()
 	answer = conjugate(verb, pronoun, tense)
+	
 	if response == answer:
 		print colorama.Fore.GREEN + 'Correct!'
 		correct = True
@@ -71,12 +72,14 @@ def quiz(length):
 	print '- Try to be as fast and accurate as possible!'	
 	print
 	print 'Press enter to begin! Type \'q\' at any time to exit.'
-	response = raw_input()
-	if response == 'q':
-		return
+	##response = raw_input()
+	##if response == 'q':
+	##	return
 
 	# Make a selection that favours the irregular verbs
-	selection = irregular.keys() + sample(regular, length-len(irregular))
+	#selection = irregular.keys() + sample(regular, length-len(irregular))
+	# now only regular
+	selection = sample(regular, length)
 	shuffle(selection)
 	
 	seed()	
@@ -86,6 +89,8 @@ def quiz(length):
 	
 	for verb in selection:		
 		tense = choice(tenses)
+		## Now only present
+		tense = 'present'
 		if tense == 'past participle':
 			pronoun = ''
 		else:

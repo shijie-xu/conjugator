@@ -20,6 +20,7 @@ along with french-verb-conjugator. If not, see <http://www.gnu.org/licenses/>.
 pronouns = 'je', 'tu', 'il', 'nous', 'vous', 'ils'
 tenses = 'present', 'future', 'imperfect', 'conditional', 'past participle'
 
+
 endings = {
 	
 	'er' : {
@@ -180,6 +181,17 @@ def conjugate(verb, pronoun, tense):
 		# See <http://french.about.com/od/grammar/a/spellingchangeg.htm>
 		if stem[-1] == 'g' and ending[0] in ('a', 'o'):
 			stem = stem + 'e'
+
+		# ennuyer ==> je ennuie, nettoyer ==> ils nettoient
+		# BUT: essayer can be either speelling
+		if stem[-1] == 'y' and (not stem[-2] == 'a'):
+			stem = stem[:-1]+'i'
+		
+		if stem[-2] == 'é' or stem[-2] == 'e':
+			stem = stem[:-2] + 'è' + stem[-1]
+
+
+		
 	return stem + ending
 
 
