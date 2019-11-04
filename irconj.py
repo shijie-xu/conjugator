@@ -103,9 +103,9 @@ def quiz(length):
 if __name__ == "__main__":
     url = r'http://verbe.cc/vcfr/conjugate/fr/'
 
-    words = open("words.txt").readlines()
+    words = open("irwords.txt").readlines()
 
-    quiz(40)
+    quiz(10)
     # response = urllib.urlopen(url) 
     # html = response.read()
     # res = json.loads(html)

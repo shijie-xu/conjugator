@@ -8,6 +8,7 @@ import colorama
 import urllib
 import json
 
+from math import *
 from random import choice, seed, sample, shuffle
 from time import time
 
@@ -23,10 +24,12 @@ def conjugate(verb, pronoun, tense):
     response = urllib.urlopen(url+verb)
     html = response.read()
     res = json.loads(html)
-    q = res['value']['moods']['indicatif'][tense][pronoun]
-    qs = q.split('\'')[-1].split(' ')[-1]
-    return qs
-
+    try:
+        q = res['value']['moods']['indicatif'][tense][pronoun]
+        qs = q.split('\'')[-1].split(' ')[-1]
+        return qs
+    except:
+        return None
 def challenge(verb, pronoun, tense):
     """
     Handles a single challenge.
@@ -47,8 +50,10 @@ def challenge(verb, pronoun, tense):
     answer = conjugate(verb, pronoun, tense)
     # print len(response)
     # print answer[-len(response):]
-
-    if response == answer:
+    if answer == None:
+        print colorama.Fore.GREEN + 'Unkown!'
+        correct = True
+    elif response == answer:
         print colorama.Fore.GREEN + 'Correct!'
         correct = True
     else:
@@ -68,14 +73,26 @@ def quiz(length):
     print '- Try to be as fast and accurate as possible!'	
     print
     print 'Press enter to begin! Type \'q\' at any time to exit.'
-    
-    selection = sample(words, length)
-    shuffle(selection)
 
     seed()
     correct = 0
     i = 0
     t1 = time()
+
+    cur_progress = 0
+    line = open("progress.txt", "rw").readline()
+    cur_progress = int(line)
+    hist = []
+    mul = 3
+    if cur_progress > 0:
+        multi = int((length/mul)/cur_progress)+2
+        hist = sample(words[0:cur_progress+1]*multi, length/mul)
+    selection = hist + [words[cur_progress]]*(length-len(hist))
+    print 'You will recall %d old words, and learn %d new words.' % (length/mul, length-len(hist))
+        
+
+    #selection = sample(words, length)
+    shuffle(selection)
 
     for verb in selection:
         tense = choice(indicatif_tenses)
@@ -86,6 +103,11 @@ def quiz(length):
         print '%d / %d' %(i+1, length)
         correct += challenge(verb, pronoun, tense)
         i += 1
+
+    if correct == i:
+        cur_progress += 1
+        fileIn=open("progress.txt", "w")
+        fileIn.write("%d" %cur_progress)
 
     acc = 100.*correct / i
     t = time() - t1
@@ -103,9 +125,9 @@ def quiz(length):
 if __name__ == "__main__":
     url = r'http://verbe.cc/vcfr/conjugate/fr/'
 
-    words = open("words.txt").readlines()
+    words = open("irwords.txt").readlines()
 
-    quiz(40)
+    quiz(20)
     # response = urllib.urlopen(url) 
     # html = response.read()
     # res = json.loads(html)
